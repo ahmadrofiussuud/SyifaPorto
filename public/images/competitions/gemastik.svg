@@ -1,0 +1,13 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gemastik" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="#EFF6FF" />
+  <circle cx="400" cy="300" r="200" fill="url(#gemastik)" opacity="0.1" />
+  <path d="M300,200 L500,200 L400,400 Z" fill="url(#gemastik)" />
+  <text x="50%" y="80%" font-family="Arial, sans-serif" font-size="40" fill="#1E40AF" text-anchor="middle" font-weight="bold">GEMASTIK XVI</text>
+  <text x="50%" y="90%" font-family="Arial, sans-serif" font-size="24" fill="#3B82F6" text-anchor="middle">Finalis Nasional</text>
+</svg>

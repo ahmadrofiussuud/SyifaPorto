@@ -1,0 +1,13 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="infinit" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="#ECFDF5" />
+  <rect x="200" y="200" width="400" height="200" rx="20" fill="url(#infinit)" />
+  <circle cx="400" cy="300" r="50" fill="white" opacity="0.3" />
+  <text x="50%" y="75%" font-family="Arial, sans-serif" font-size="40" fill="#047857" text-anchor="middle" font-weight="bold">InfinIT 2024</text>
+  <text x="50%" y="85%" font-family="Arial, sans-serif" font-size="24" fill="#10B981" text-anchor="middle">Best UI Design</text>
+</svg>
