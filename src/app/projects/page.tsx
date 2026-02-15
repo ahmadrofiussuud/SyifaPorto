@@ -64,17 +64,17 @@ function ProjectsContent() {
     return (
         <Section>
             <div className="space-y-8 min-h-screen">
-                <div className="text-center space-y-4">
+                <div className="text-center space-y-3">
                     <div className="animate-blur-in">
                         <SectionHeading>Portfolio</SectionHeading>
                     </div>
-                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto animate-blur-in delay-100">
+                    <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto animate-blur-in delay-100 opacity-90">
                         Koleksi karya terbaik yang pernah saya kerjakan, mulai dari eksplorasi UI hingga aplikasi web fungsional.
                     </p>
                 </div>
 
                 {/* Filters & Search */}
-                <div className="flex flex-col md:flex-row items-center justify-between gap-4 py-4 sticky top-16 bg-background/80 backdrop-blur-md z-40 px-4 -mx-4 rounded-b-2xl md:static md:bg-transparent md:p-0 animate-blur-in delay-200">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-4 py-3 sticky top-16 bg-background/80 backdrop-blur-md z-40 px-4 -mx-4 rounded-b-2xl md:static md:bg-transparent md:p-0 animate-blur-in delay-200">
                     {/* Type Filters */}
                     <div className="flex flex-wrap justify-center gap-2 order-2 md:order-1">
                         {filters.map((filter) => (
@@ -82,7 +82,7 @@ function ProjectsContent() {
                                 key={filter}
                                 variant={currentFilter === filter ? 'primary' : 'outline'}
                                 onClick={() => handleFilterChange(filter as string)}
-                                className={cn("rounded-full transition-all", currentFilter === filter ? "shadow-md scale-105" : "text-muted-foreground hover:text-foreground")}
+                                className={cn("rounded-full transition-all text-xs h-8 px-4", currentFilter === filter ? "shadow-md scale-105" : "text-muted-foreground hover:text-foreground")}
                                 size="sm"
                             >
                                 {filter}
@@ -91,11 +91,11 @@ function ProjectsContent() {
                     </div>
 
                     {/* Search Bar */}
-                    <div className="relative w-full md:w-64 order-1 md:order-2">
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                    <div className="relative w-full md:w-56 order-1 md:order-2">
+                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
                         <Input
                             placeholder="Cari project..."
-                            className="pl-9 pr-8 rounded-full bg-muted/50 border-primary/20 focus-visible:ring-primary/50"
+                            className="pl-9 pr-8 h-9 rounded-full bg-muted/50 border-primary/20 focus-visible:ring-primary/50 text-xs"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
@@ -112,7 +112,7 @@ function ProjectsContent() {
 
                 {/* Gallery */}
                 {filteredProjects.length > 0 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-blur-in delay-300">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 animate-blur-in delay-300">
                         {filteredProjects.map((project) => (
                             <Link key={project.slug} href={`/projects/${project.slug}`} className="group block">
                                 <Card className="h-full overflow-hidden transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:-translate-y-1 bg-card/40 border-primary/5">

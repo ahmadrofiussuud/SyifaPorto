@@ -40,41 +40,41 @@ export default function Home() {
   const journeyTeaser = journey.slice(0, 3);
 
   return (
-    <div className="flex flex-col min-h-screen relative overflow-hidden">
+    <div className="flex flex-col min-h-screen relative">
       {/* ==================== HERO SECTION ==================== */}
-      <section className="relative min-h-[60vh] flex flex-col pt-16 lg:pt-24 pb-8 overflow-hidden">
+      <section className="relative min-h-[55vh] flex flex-col pt-12 lg:pt-20 pb-6">
         <HeroBackground />
 
-        <div className="container mx-auto px-6 md:px-12 relative z-10 flex-1 flex flex-col justify-start">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 lg:gap-16 items-center -mt-8 lg:-mt-16">
+        <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10 flex-1 flex flex-col justify-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
 
             {/* Left Content: Typography & CTAs */}
-            <div className="lg:col-span-7 space-y-8 animate-blur-in">
+            <div className="lg:col-span-7 space-y-6 animate-blur-in">
               <div className="space-y-4 text-center lg:text-left">
-                <span className="inline-flex items-center text-primary font-bold tracking-widest uppercase text-xs sm:text-sm">
-                  <span className="w-8 h-[2px] bg-primary mr-3 hidden lg:block" />
+                <span className="inline-flex items-center text-primary font-bold tracking-widest uppercase text-[10px] sm:text-xs">
+                  <span className="w-6 h-[2px] bg-primary mr-3 hidden lg:block" />
                   Halo, Saya Syifa Zahra
                 </span>
 
-                <h1 className="text-5xl sm:text-7xl md:text-8xl xl:text-[7.5rem] font-black font-heading tracking-tight leading-[0.9] text-foreground">
+                <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black font-heading tracking-tight leading-none text-foreground transition-all">
                   UI/UX <br />
                   <span className="bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">Designer</span>
                 </h1>
 
-                <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed font-medium mx-auto lg:mx-0">
+                <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed font-medium mx-auto lg:mx-0 opacity-90 text-balance">
                   {personalInfo.bio.short} Saya fokus pada pembuatan antarmuka yang bersih, intuitif, dan berdampak bagi pengguna.
                 </p>
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-5">
                 <Link href="/about">
-                  <Button size="lg" className="h-12 sm:h-14 px-8 sm:px-10 rounded-xl bg-primary hover:bg-primary/90 text-white font-bold text-base sm:text-lg shadow-xl shadow-primary/20 transition-all hover:-translate-y-1 active:scale-95">
+                  <Button size="lg" className="h-11 sm:h-13 px-6 sm:px-9 rounded-xl bg-primary hover:bg-primary/90 text-white font-bold text-sm sm:text-base shadow-lg shadow-primary/20 transition-all hover:-translate-y-1 active:scale-95">
                     ABOUT ME
                   </Button>
                 </Link>
                 <Link href="/contact">
-                  <Button size="lg" variant="outline" className="h-12 sm:h-14 px-8 sm:px-10 rounded-xl border-2 border-primary/20 hover:bg-primary/5 hover:border-primary/40 font-bold text-base sm:text-lg text-foreground transition-all active:scale-95">
+                  <Button size="lg" variant="outline" className="h-11 sm:h-13 px-6 sm:px-9 rounded-xl border-2 border-primary/20 hover:bg-primary/5 hover:border-primary/40 font-bold text-sm sm:text-base text-foreground transition-all active:scale-95">
                     CONTACT ME
                   </Button>
                 </Link>
@@ -82,15 +82,15 @@ export default function Home() {
             </div>
 
             {/* Right Content: Photo (Natural & No Frame) */}
-            <div className="lg:col-span-5 relative flex justify-center lg:justify-end animate-pop-in duration-1000 delay-300 -mt-12 lg:mt-0">
-              <div className="relative w-full max-w-[450px] aspect-[4/5] sm:aspect-[3/4]">
+            <div className="lg:col-span-5 relative flex justify-center lg:justify-end animate-pop-in duration-1000 delay-300 -mt-10 lg:mt-0">
+              <div className="relative w-full max-w-[400px] aspect-[4/5] sm:aspect-[3/4]">
                 {/* No frame, just the image sat naturally */}
                 <Image
                   src="/images/hero-syifa-natural.png"
                   alt="Syifa Zahra"
-                  width={600}
-                  height={800}
-                  className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(236,72,153,0.15)]"
+                  width={550}
+                  height={750}
+                  className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(236,72,153,0.12)]"
                   priority
                 />
               </div>
@@ -109,11 +109,11 @@ export default function Home() {
                 ].map((stat, i) => (
                   <div
                     key={i}
-                    className="px-6 py-8 text-center bg-transparent hover:bg-primary/5 transition-all duration-500 group relative cursor-default overflow-hidden"
+                    className="px-5 py-6 text-center bg-transparent hover:bg-primary/5 transition-all duration-500 group relative cursor-default overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <div className="relative z-10 transition-transform duration-500 group-hover:-translate-y-1">
-                      <div className="text-4xl lg:text-5xl font-black font-heading tracking-tighter text-foreground">
+                      <div className="text-3xl lg:text-4xl font-black font-heading tracking-tighter text-foreground">
                         {stat.value}
                       </div>
                       <div className="text-[10px] lg:text-xs font-bold text-muted-foreground uppercase tracking-[0.2em] mt-1 group-hover:text-primary transition-colors">
@@ -201,7 +201,7 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <CardContent className="p-7 flex flex-col gap-4 flex-1">
+                    <CardContent className="p-6 flex flex-col gap-3.5 flex-1">
                       <div className="space-y-3 flex-1">
                         <div className="flex flex-wrap gap-2">
                           {project.tags.slice(0, 3).map(tag => (

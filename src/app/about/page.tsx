@@ -49,7 +49,7 @@ export default function AboutPage() {
                 <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-[120px] opacity-30 mix-blend-screen animate-pulse" style={{ animationDuration: '10s' }} />
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+            <div className="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
 
                 {/* LEFT: Profile Spotlight (Sticky Editorial) */}
                 <div className="lg:col-span-5 relative z-10">
