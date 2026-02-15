@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { HeroBackground } from '@/components/ui/HeroBackground';
 import { personalInfo, projects, competitions, journey } from '@/data/content';
+import { ImageWithFallback } from '@/components/ui/image-with-fallback';
 
 const tools = [
   { name: 'Figma', icon: Figma },
@@ -41,57 +42,100 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen relative overflow-hidden">
       {/* ==================== HERO SECTION ==================== */}
-      {/* ==================== HERO SECTION ==================== */}
-      <section className="relative min-h-[calc(100vh-4rem)] flex flex-col justify-start overflow-hidden">
+      <section className="relative min-h-[60vh] flex flex-col pt-16 lg:pt-24 pb-8 overflow-hidden">
         <HeroBackground />
 
-        <div className="container mx-auto px-6 md:px-12 pt-24 md:pt-32 pb-12 relative z-10 flex flex-col items-center justify-center min-h-[80vh]">
-          <div className="max-w-6xl space-y-4 flex flex-col items-center text-center">
-            {/* Status badge */}
-            <div className="animate-pop-in duration-700 mb-2">
-              <Badge className="bg-primary/10 backdrop-blur-md border border-primary/20 text-primary px-4 py-1.5 text-sm hover:bg-primary/15 dark:bg-primary/20 dark:border-primary/30 dark:text-primary rounded-full shadow-sm">
-                <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-2 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.5)]" />
-                Open for UI/UX Collaboration
-              </Badge>
+        <div className="container mx-auto px-6 md:px-12 relative z-10 flex-1 flex flex-col justify-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 lg:gap-16 items-center -mt-8 lg:-mt-16">
+
+            {/* Left Content: Typography & CTAs */}
+            <div className="lg:col-span-7 space-y-8 animate-blur-in">
+              <div className="space-y-4 text-center lg:text-left">
+                <span className="inline-flex items-center text-primary font-bold tracking-widest uppercase text-xs sm:text-sm">
+                  <span className="w-8 h-[2px] bg-primary mr-3 hidden lg:block" />
+                  Halo, Saya Syifa Zahra
+                </span>
+
+                <h1 className="text-5xl sm:text-7xl md:text-8xl xl:text-[7.5rem] font-black font-heading tracking-tight leading-[0.9] text-foreground">
+                  UI/UX <br />
+                  <span className="bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">Designer</span>
+                </h1>
+
+                <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed font-medium mx-auto lg:mx-0">
+                  {personalInfo.bio.short} Saya fokus pada pembuatan antarmuka yang bersih, intuitif, dan berdampak bagi pengguna.
+                </p>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6">
+                <Link href="/about">
+                  <Button size="lg" className="h-12 sm:h-14 px-8 sm:px-10 rounded-xl bg-primary hover:bg-primary/90 text-white font-bold text-base sm:text-lg shadow-xl shadow-primary/20 transition-all hover:-translate-y-1 active:scale-95">
+                    ABOUT ME
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button size="lg" variant="outline" className="h-12 sm:h-14 px-8 sm:px-10 rounded-xl border-2 border-primary/20 hover:bg-primary/5 hover:border-primary/40 font-bold text-base sm:text-lg text-foreground transition-all active:scale-95">
+                    CONTACT ME
+                  </Button>
+                </Link>
+              </div>
             </div>
 
-            {/* Main Heading */}
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black font-heading tracking-tighter leading-[1.0] animate-blur-in delay-150">
-              <span className="text-foreground block">Crafting Digital</span>
-              <span className="bg-gradient-to-r from-primary via-purple-500 to-secondary bg-clip-text text-transparent block pb-3">Experiences that Matter.</span>
-            </h1>
+            {/* Right Content: Photo (Natural & No Frame) */}
+            <div className="lg:col-span-5 relative flex justify-center lg:justify-end animate-pop-in duration-1000 delay-300 -mt-12 lg:mt-0">
+              <div className="relative w-full max-w-[450px] aspect-[4/5] sm:aspect-[3/4]">
+                {/* No frame, just the image sat naturally */}
+                <Image
+                  src="/images/hero-syifa-natural.png"
+                  alt="Syifa Zahra"
+                  width={600}
+                  height={800}
+                  className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(236,72,153,0.15)]"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
 
-            {/* Subtitle */}
-            <p className="text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed font-medium animate-blur-in delay-300 mx-auto">
-              {personalInfo.bio.long}
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto animate-blur-in delay-[450ms] justify-center">
-              <Link href="/projects" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full sm:w-auto h-12 px-8 text-base rounded-full shadow-xl shadow-primary/20 hover:shadow-primary/30 transition-all hover:-translate-y-1 font-bold">
-                  View Selected Works <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-              <Link href="/contact" className="w-full sm:w-auto">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto h-12 px-8 text-base rounded-full border-2 border-primary/10 hover:bg-primary/5 hover:border-primary/30 transition-all text-foreground font-semibold">
-                  Get in Touch
-                </Button>
-              </Link>
+          {/* ==================== STATS BAR (Sleek & Interactive) ==================== */}
+          <div className="mt-1 lg:mt-2 w-full relative z-20">
+            <div className="bg-white/5 dark:bg-black/20 backdrop-blur-xl rounded-[2rem] border border-white/10 shadow-2xl overflow-hidden">
+              <div className="grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
+                {[
+                  { value: '1+', label: 'Years Exp' },
+                  { value: '5+', label: 'Web Works' },
+                  { value: '5+', label: 'Awards Won' },
+                  { value: '10+', label: 'Design Concepts' },
+                ].map((stat, i) => (
+                  <div
+                    key={i}
+                    className="px-6 py-8 text-center bg-transparent hover:bg-primary/5 transition-all duration-500 group relative cursor-default overflow-hidden"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="relative z-10 transition-transform duration-500 group-hover:-translate-y-1">
+                      <div className="text-4xl lg:text-5xl font-black font-heading tracking-tighter text-foreground">
+                        {stat.value}
+                      </div>
+                      <div className="text-[10px] lg:text-xs font-bold text-muted-foreground uppercase tracking-[0.2em] mt-1 group-hover:text-primary transition-colors">
+                        {stat.label}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-in fade-in duration-1000 delay-700">
-          <span className="text-muted-foreground/50 text-xs uppercase tracking-[0.3em] font-medium">Scroll</span>
-          <ChevronDown className="h-4 w-4 text-muted-foreground/50 animate-bounce" />
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 lg:hidden opacity-30">
+          <ChevronDown className="h-5 w-5 text-muted-foreground animate-bounce" />
         </div>
       </section>
 
       {/* ==================== STATUS + TOOLS ==================== */}
       <ScrollReveal>
-        <Section className="py-8 md:py-12">
+        <Section className="py-4 md:py-6">
           <div className="bg-card/40 backdrop-blur-sm border border-primary/10 rounded-3xl p-6 md:p-10 shadow-sm space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
               <div className="space-y-3">
@@ -105,15 +149,17 @@ export default function Home() {
             </div>
 
             {/* Tools Strip */}
-            <div className="border-t border-primary/10 pt-5">
-              <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-4">Tools & Skills</p>
-              <div className="flex flex-wrap gap-3">
+            <div className="border-t border-primary/10 pt-6">
+              <p className="text-[10px] font-black text-muted-foreground uppercase tracking-[0.2em] mb-5 text-center lg:text-left opacity-70">
+                Tools & Skills
+              </p>
+              <div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4">
                 {tools.map((tool) => (
                   <div
                     key={tool.name}
-                    className="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-card/70 border border-border/50 text-sm font-medium text-foreground/80 hover:border-primary/30 hover:bg-card hover:text-primary hover:shadow-sm hover:-translate-y-0.5 transition-all duration-300 cursor-default"
+                    className="flex items-center gap-2.5 px-5 py-3 rounded-xl bg-card/40 border border-primary/10 text-sm font-bold text-foreground/80 hover:border-primary/40 hover:bg-card hover:text-primary hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-default group"
                   >
-                    <tool.icon className="h-4 w-4" />
+                    <tool.icon className="h-4 w-4 text-primary/60 group-hover:text-primary transition-colors" strokeWidth={2.5} />
                     <span>{tool.name}</span>
                   </div>
                 ))}
@@ -123,7 +169,6 @@ export default function Home() {
         </Section>
       </ScrollReveal>
 
-      {/* ==================== FEATURED PROJECTS ==================== */}
       <ScrollReveal>
         <Section className="py-8 md:py-12">
           <div className="flex justify-between items-end mb-6 md:mb-8">
@@ -134,34 +179,48 @@ export default function Home() {
               </Button>
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {featuredProjects.map((project, index) => (
               <ScrollReveal key={project.slug} delay={index * 150}>
                 <Link href={`/projects/${project.slug}`} className="group block h-full">
-                  <Card className="h-full overflow-hidden border-border/40 shadow-sm bg-card/50 hover:bg-card hover:border-primary/20 hover:shadow-lg transition-all duration-300 flex flex-col">
-                    <div className="aspect-[2/1] relative overflow-hidden bg-muted">
-                      <div className="absolute inset-0 group-hover:scale-105 transition-transform duration-500">
-                        <Image
-                          src={project.coverImage}
-                          alt={project.title}
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        />
+                  <Card className="h-full overflow-hidden transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:-translate-y-1 bg-card/40 border-primary/10">
+                    <div className="aspect-[16/9] relative overflow-hidden bg-muted group">
+                      {/* Image with Branded Fallback */}
+                      <ImageWithFallback
+                        src={project.coverImage}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+
+                      <div className="absolute top-4 right-4 z-10">
+                        <Badge variant="secondary" className="bg-white/95 dark:bg-black/80 backdrop-blur shadow-sm text-[10px] font-bold px-3 py-1 text-slate-900 dark:text-slate-100">
+                          {project.type}
+                        </Badge>
                       </div>
                     </div>
-                    <CardContent className="p-6 flex flex-col gap-3 flex-1">
-                      <div className="flex gap-2">
-                        {project.tags.slice(0, 2).map(tag => (
-                          <Badge key={tag} variant="secondary" className="text-[10px] bg-secondary/10 text-secondary-foreground">{tag}</Badge>
-                        ))}
+
+                    <CardContent className="p-7 flex flex-col gap-4 flex-1">
+                      <div className="space-y-3 flex-1">
+                        <div className="flex flex-wrap gap-2">
+                          {project.tags.slice(0, 3).map(tag => (
+                            <Badge key={tag} variant="outline" className="text-[10px] bg-secondary/10 border-primary/10 text-muted-foreground">{tag}</Badge>
+                          ))}
+                        </div>
+                        <h3 className="text-2xl font-bold font-heading group-hover:text-primary transition-colors flex items-center leading-tight">
+                          {project.title} <ArrowUpRight className="ml-1 h-5 w-5 opacity-0 group-hover:opacity-100 transition-opacity translate-x-[-10px] group-hover:translate-x-0 transition-all" />
+                        </h3>
+                        <p className="text-muted-foreground text-base leading-relaxed line-clamp-2">
+                          {project.shortSummary}
+                        </p>
                       </div>
-                      <h3 className="text-2xl font-bold font-heading group-hover:text-primary transition-colors flex items-center leading-tight">
-                        {project.title} <ArrowUpRight className="ml-1 h-5 w-5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </h3>
-                      <p className="text-muted-foreground text-base leading-relaxed line-clamp-3">
-                        {project.shortSummary}
-                      </p>
+
+                      <div className="pt-4 border-t border-primary/5">
+                        <span className="text-sm font-bold text-primary inline-flex items-center group-hover:translate-x-1 transition-transform">
+                          Lihat detail project →
+                        </span>
+                      </div>
                     </CardContent>
                   </Card>
                 </Link>

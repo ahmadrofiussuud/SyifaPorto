@@ -1,4 +1,4 @@
-export type ProjectType = 'UI/UX' | 'Web' | 'Lomba' | 'Organisasi';
+export type ProjectType = 'Project' | 'Lomba' | 'Organisasi';
 
 export interface Project {
     slug: string;
@@ -93,7 +93,7 @@ export const personalInfo: PersonalInfo = {
         values: ["Belajar Teknologi Baru", "Eksplorasi Desain"]
     },
     socials: {
-        email: "syifa@example.com",
+        email: "syifazahraas@gmail.com",
         linkedin: "https://www.linkedin.com/in/syifa-zahra-amelia-shofa-075b08316/",
         dribbble: "https://dribbble.com/syifadesign",
         github: "https://github.com/Syifazahraas",
@@ -104,35 +104,35 @@ export const personalInfo: PersonalInfo = {
 export const journey: JourneyPhase[] = [
     {
         id: "phase-1",
-        title: "Awal Mula",
-        timeframe: "2021",
-        story: "Semua berawal dari rasa penasaran saat melihat desain aplikasi yang cantik. Saya mulai belajar otodidak tentang kombinasi warna dan tipografi, mencoba membuat desain sederhana untuk tugas kuliah.",
-        keyLesson: "Visual yang baik membuat orang betah berlama-lama.",
+        title: "Langkah Pertama",
+        timeframe: "2024",
+        story: "Mulai tertarik dengan dunia kreatif dan mencoba belajar desain secara mandiri. Masih banyak belajar tentang dasar-dasar visual melalui tugas perkuliahan.",
+        keyLesson: "Desain adalah proses belajar yang terus menerus.",
         relatedWorks: []
     },
     {
         id: "phase-2",
-        title: "Mendalami Kode",
-        timeframe: "2022",
-        story: "Saya menyadari desain saja tidak cukup. Di jurusan PTI, saya mulai serius belajar frontend development agar bisa mewujudkan desain saya menjadi website interaktif yang nyata.",
-        keyLesson: "Coding mengajarkan saya berpikir logis dan terstruktur.",
+        title: "Belajar Teknologi",
+        timeframe: "2024",
+        story: "Seiring berjalannya kuliah di PTI, saya mulai mengenal dunia koding. Mencoba memahami bagaimana sebuah desain bisa diimplementasikan menjadi website sederhana.",
+        keyLesson: "Teknologi membantu mewujudkan ide dasar menjadi nyata.",
         relatedWorks: []
     },
     {
         id: "phase-3",
-        title: "Eksplorasi & Kompetisi",
-        timeframe: "2023",
-        story: "Mulai memberanikan diri mengikuti lomba UI/UX dan mengerjakan proyek kecil. Bertemu banyak teman baru dan belajar bahwa kolaborasi adalah kunci untuk menghasilkan karya yang lebih baik.",
-        keyLesson: "Feedback adalah sarapan para juara.",
-        relatedWorks: [{ title: "Lomba UI/UX", link: "/competitions" }]
+        title: "Eksplorasi & Pengalaman",
+        timeframe: "2025",
+        story: "Mulai mengikuti beberapa lomba untuk menambah wawasan dan pengalaman. Di sini saya belajar bahwa masih banyak hal yang perlu diperdalam lagi.",
+        keyLesson: "Pengalaman di lapangan adalah guru yang terbaik.",
+        relatedWorks: [{ title: "Lomba & Project", link: "/projects" }]
     },
     {
         id: "phase-4",
-        title: "Fokus Saat Ini",
+        title: "Proses Saat Ini",
         timeframe: "Sekarang",
-        story: "Kini saya menyeimbangkan kuliah dengan terus mengasah skill desain dan koding. Saya ingin membangun karir sebagai desainer yang mengerti teknis, atau developer yang punya rasa seni.",
-        keyLesson: "Konsistensi mengalahkan motivasi sesaat.",
-        relatedWorks: [{ title: "Portfolio V1", link: "/projects/portfolio-v1" }]
+        story: "Masih fokus menyeimbangkan kuliah sambil pelan-pelan mengasah skill desain dan koding. Berusaha memberikan yang terbaik di setiap kesempatan belajar.",
+        keyLesson: "Satu langkah kecil setiap hari jauh lebih berarti.",
+        relatedWorks: [{ title: "Lihat Project", link: "/projects" }]
     }
 ];
 
@@ -147,7 +147,7 @@ export const competitions: Competition[] = [
         role: "Researcher & Desain UI/UX",
         outcome: "Bronze Medal",
         shortStory: "Kompetisi internasional dengan tim 5 orang. Kami gabungkan riset mendalam dengan desain pitch deck yang persuasif.",
-        coverImage: "/images/competitions/iss-malaysia.webp",
+        coverImage: "/images/competitions/iss-malaysia-cert.jpg",
         deliverables: {
             slide: "https://slides.com/iss-malaysia-example"
         },
@@ -170,7 +170,7 @@ export const competitions: Competition[] = [
         role: "Pitcher & Designer",
         outcome: "Juara 3",
         shortStory: "Merancang pitch untuk solusi energi terbarukan—dari riset sampai deck yang bikin juri antusias.",
-        coverImage: "/images/competitions/greenovation.svg",
+        coverImage: "/images/competitions/greenovation-cert.jpg",
         deliverables: {
             slide: "https://slides.com/greenovation-example"
         },
@@ -191,7 +191,7 @@ export const competitions: Competition[] = [
         role: "Pitcher & Designer",
         outcome: "Silver Medal",
         shortStory: "Kompetisi nasional untuk solusi edukasi digital. Kami bawa ide platform pembelajaran yang bisa jalan tanpa internet.",
-        coverImage: "/images/competitions/cipta-nusantara.svg",
+        coverImage: "/images/competitions/cipta-nusantara-cert.jpg",
         deliverables: {
             slide: "https://slides.com/example"
         },
@@ -212,7 +212,7 @@ export const competitions: Competition[] = [
         role: "Business Analyst",
         outcome: "Finalis",
         shortStory: "Lomba ide bisnis sosial untuk pemuda. Kami tawarkan platform mentorship untuk UMKM muda.",
-        coverImage: "/images/competitions/youth-ideas.svg",
+        coverImage: "/images/competitions/youth-ideas-cert.png",
         deliverables: {
             slide: "https://canva.com/example"
         },
@@ -233,7 +233,7 @@ export const competitions: Competition[] = [
         role: "Product Designer",
         outcome: "Lolos UB",
         shortStory: "Inovasi edutech tingkat nasional. Kami rancang adaptive learning platform buat cara belajar yang lebih personal.",
-        coverImage: "/images/competitions/lidm.svg",
+        coverImage: "/projects/lidm-cover.jpg",
         deliverables: {
             design: "https://figma.com/lidm-example"
         },
@@ -248,87 +248,108 @@ export const competitions: Competition[] = [
 
 export const projects: Project[] = [
     {
-        slug: "fintask-mobile",
-        title: "FinTask Mobile App",
+        title: "Amora",
+        slug: "amora",
+        type: "Lomba",
+        year: "2026",
         role: "UI/UX Designer",
-        year: "2024",
-        tags: ["Figma", "Mobile Design", "Prototyping"],
-        type: "UI/UX",
-        shortSummary: "Aplikasi manajemen keuangan pribadi dengan pendekatan gamifikasi untuk Gen Z.",
-        problem: "Generasi Z kesulitan mengatur keuangan karena aplikasi yang ada terlalu kaku.",
-        process: "Riset pengguna, Wireframing, Hi-Fi Design, Usability Testing.",
-        result: "Dedesain ulang untuk meningkatkan engagement pengguna sebesar 40%.",
-        coverImage: "/images/projects/uiux-1.svg",
-        gallery: []
+        tags: ["Mobile Design", "Figma", "Prototyping"],
+        shortSummary: "Desain UI/UX untuk produk lomba, fokus pada alur yang ringkas dan tampilan yang nyaman dipakai.",
+        problem: "Detail problem untuk project Amora akan segera dilengkapi setelah revisi final.",
+        process: "Detail proses pengerjaan Amora mencakup riset kompetitor dan desain iteratif.",
+        result: "Impact: Menghasilkan desain yang clean dan user-centric.",
+        coverImage: "/projects/amora-cover.jpg",
+        gallery: ["/projects/amora/01.webp", "/projects/amora/02.webp"]
     },
     {
-        slug: "learnit-education",
-        title: "LearnIt Platform",
+        title: "SerenityHub",
+        slug: "serenityhub",
+        type: "Lomba",
+        year: "2026",
+        role: "UI/UX Designer",
+        tags: ["Mobile Design", "Figma", "UX Flow"],
+        shortSummary: "Rancangan pengalaman pengguna untuk ide lomba, menekankan kejelasan flow dan konsistensi komponen.",
+        problem: "Detail problem untuk project SerenityHub akan segera dilengkapi sesuai revisi terbaru.",
+        process: "Detail proses pengerjaan SerenityHub fokus pada alur navigasi yang intuitif.",
+        result: "Impact: Menciptakan alur pengguna yang intuitif dan kohesif.",
+        coverImage: "/projects/serenityhub-cover.jpg"
+    },
+    {
+        title: "Rantaweb",
+        slug: "rantaweb",
+        type: "Lomba",
+        year: "2026",
+        role: "UI/UX Designer",
+        tags: ["UI Design", "Figma", "Design System"],
+        shortSummary: "Konsep UI/UX untuk proyek lomba dengan layout yang rapi, hierarki jelas, dan siap diprototipekan.",
+        problem: "Detail problem untuk project Rantaweb akan segera dilengkapi untuk deskripsi produk.",
+        process: "Detail proses pengerjaan Rantaweb melibatkan pembuatan design system yang terintegrasi.",
+        result: "Impact: Membangun sistem desain yang skalabel dan estetik.",
+        coverImage: "/projects/rantaweb-cover.jpg"
+    },
+    {
+        title: "KBMDSI",
+        slug: "kbmdsi",
+        type: "Organisasi",
+        year: "2026",
+        role: "MEDKOMINFO",
+        tags: ["Organisasi", "HIMA", "Kepanitiaan"],
+        shortSummary: "Peran MEDKOMINFO dalam kegiatan organisasi: mengelola komunikasi visual dan materi publikasi yang konsisten.",
+        problem: "Detail problem untuk project KBMDSI terkait standarisasi visual komunikasi organisasi.",
+        process: "Detail proses pengerjaan KBMDSI meliputi manajemen branding dan publikasi rutin.",
+        result: "Impact: Meningkatkan visibilitas organisasi melalui konten visual yang profesional.",
+        coverImage: "/projects/kbmdsi-cover.jpg"
+    },
+    {
+        title: "LIDM",
+        slug: "lidm",
+        type: "Lomba",
+        year: "2024",
+        role: "UI/UX Designer",
+        tags: ["Lomba", "UI/UX", "Case Study"],
+        shortSummary: "Inovasi desain untuk kompetisi LIDM, berfokus pada solusi inklusif dan antarmuka yang modern.",
+        problem: "Detail problem untuk project LIDM akan segera dilengkapi.",
+        process: "Detail proses pengerjaan LIDM meliputi riset dan pengembangan prototipe.",
+        result: "Impact: Menghasilkan konsep desain yang kompetitif dan inovatif.",
+        coverImage: "/projects/lidm-cover.jpg"
+    },
+    {
+        title: "Web Sekolah (Misra)",
+        slug: "web-sekolah-misra",
+        type: "Project",
+        year: "2024",
+        role: "Web Developer",
+        tags: ["Education", "Management System", "Web"],
+        shortSummary: "Platform digital untuk memodernisasi administrasi sekolah, fokus pada efisiensi pengelolaan data.",
+        problem: "Kebutuhan akan sistem terpusat untuk memantau kehadiran dan nilai siswa secara transparan.",
+        process: "Pengembangan arsitektur database dan dashboard admin yang informatif.",
+        result: "Impact: Mengurangi penggunaan kertas dan manualitas administrasi hingga 60%.",
+        coverImage: "/projects/misra-school.jpg"
+    },
+    {
+        title: "Web Toko Bangunan (SEMAR)",
+        slug: "web-toko-bangunan-semar",
+        type: "Project",
+        year: "2024",
         role: "Product Designer",
-        year: "2023",
-        tags: ["Case Study", "Education", "User Research"],
-        type: "UI/UX",
-        shortSummary: "Platform pembelajaran daring yang inklusif untuk siswa berkebutuhan khusus.",
-        problem: "Kurangnya platform belajar yang ramah aksesibilitas.",
-        process: "Empathize, Define, Ideate, Prototype, Test.",
-        result: "Konsep final memenangkan Best Design Award di kompetisi kampus.",
-        coverImage: "/images/projects/uiux-2.svg",
-        gallery: []
+        tags: ["E-commerce", "Inventory", "Project"],
+        shortSummary: "Sistem manajemen inventaris dan penjualan untuk mempermudah operasional toko bangunan.",
+        problem: "Pelacakan stok barang yang sulit dan pencatatan transaksi yang masih konvensional.",
+        process: "Desain sistem inventory cerdas dengan pengingat stok minimum.",
+        result: "Impact: Meminimalisir kesalahan pencatatan stok dan mempercepat proses transaksi.",
+        coverImage: "/projects/semar-building.jpg"
     },
     {
-        slug: "corpweb-redesign",
-        title: "CorpWeb Redesign",
-        role: "Frontend Developer",
+        title: "TenangIn",
+        slug: "tenangin",
+        type: "Lomba",
         year: "2024",
-        tags: ["Next.js", "Tailwind CSS", "Corporate"],
-        type: "Web",
-        shortSummary: "Redesign website profil perusahaan agar lebih modern dan responsif.",
-        problem: "Website lama lambat dan tidak mobile-friendly.",
-        process: "Slicing design ke Next.js, optimasi performa.",
-        result: "Loading time berkurang 50% dan traffic meningkat.",
-        coverImage: "/images/projects/web-1.svg",
-        gallery: []
-    },
-    {
-        slug: "metrics-dashboard",
-        title: "Admin Metrics Dashboard",
-        role: "Fullstack Developer",
-        year: "2023",
-        tags: ["React", "Chart.js", "Internal Tool"],
-        type: "Web",
-        shortSummary: "Sistem monitoring data internal untuk tim operasional.",
-        problem: "Data tersebar di berbagai spreadsheet manual.",
-        process: "Integrasi API, visualisasi data real-time.",
-        result: "Efisiensi pelaporan meningkat signifikan.",
-        coverImage: "/images/projects/web-2.svg",
-        gallery: []
-    },
-    {
-        slug: "techfair-2023",
-        title: "TechFair 2023",
-        role: "Head of Design",
-        year: "2023",
-        tags: ["Event", "Branding", "Teamwork"],
-        type: "Organisasi",
-        shortSummary: "Memimpin divisi visual untuk seminar teknologi nasional terbesar di kampus.",
-        problem: "Butuh identitas visual yang fresh dan menarik minat mahasiswa luar.",
-        process: "Brainstorming tema, produksi aset sosial media dan merchandise.",
-        result: "Tiket terjual habis dalam 3 hari, visual mendapat banyak pujian.",
-        coverImage: "/images/projects/org-1.svg",
-        gallery: []
-    },
-    {
-        slug: "charity-run",
-        title: "Charity Run for Hope",
-        role: "Event Coordinator",
-        year: "2022",
-        tags: ["Leadership", "Social Impact", "Public Relations"],
-        type: "Organisasi",
-        shortSummary: "Menggalang dana untuk panti asuhan melalui event lari virtual.",
-        problem: "Kesulitan mengumpulkan donasi di masa pasca-pandemi.",
-        process: "Kampanye digital, kerjasama sponsorship.",
-        result: "Mengumpulkan donasi 20 juta rupiah untuk panti asuhan.",
-        coverImage: "/images/projects/org-2.svg",
-        gallery: []
+        role: "UI/UX Designer",
+        tags: ["Mental Health", "Mobile App", "Lomba"],
+        shortSummary: "Aplikasi kesehatan mental yang berfokus pada ketenangan dan manajemen stres pengguna.",
+        problem: "Meningkatnya tingkat stres di kalangan mahasiswa yang membutuhkan pertolongan pertama secara digital.",
+        process: "Riset mendalam mengenai perilaku pengguna dan desain antarmuka yang menenangkan (calm UI).",
+        result: "Impact: Menghasilkan prototipe aplikasi yang divalidasi oleh pakar psikologi.",
+        coverImage: "/projects/tenangin-cover.png"
     }
 ];

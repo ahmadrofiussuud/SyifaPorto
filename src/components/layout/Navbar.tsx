@@ -25,7 +25,7 @@ export function Navbar() {
 
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl shadow-sm transition-all duration-300">
-            <div className="container h-16 px-4 md:px-8 mx-auto grid grid-cols-2 lg:grid-cols-3 items-center">
+            <div className="max-w-[1600px] h-16 px-6 md:px-10 mx-auto grid grid-cols-2 lg:grid-cols-3 items-center">
                 <div className="flex items-center justify-start">
                     <Link href="/" className="flex items-center space-x-2">
                         <span className="font-bold text-lg hidden sm:inline-block">
@@ -70,7 +70,7 @@ export function Navbar() {
 
                     <div className="hidden lg:flex">
                         <Link href="/contact">
-                            <Button size="sm">Hire Me</Button>
+                            <Button size="sm">Contact Me</Button>
                         </Link>
                     </div>
                     <button
@@ -103,7 +103,7 @@ export function Navbar() {
                         </nav>
                         <div className="pt-2">
                             <Link href="/contact" onClick={() => setIsOpen(false)}>
-                                <Button size="sm" className="w-full">Hire Me</Button>
+                                <Button size="sm" className="w-full">Contact Me</Button>
                             </Link>
                         </div>
                     </div>

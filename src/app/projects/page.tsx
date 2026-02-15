@@ -2,6 +2,7 @@
 
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
+import Image from 'next/image';
 import { SectionHeading } from '@/components/ui/section-heading';
 import Link from 'next/link';
 import { Section } from '@/components/ui/section';
@@ -9,11 +10,12 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { projects, ProjectType } from '@/data/content';
+import { ImageWithFallback } from '@/components/ui/image-with-fallback';
 import { cn } from '@/lib/utils';
 import { Search, X } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 
-const filters: (ProjectType | 'All')[] = ['All', 'UI/UX', 'Web', 'Lomba', 'Organisasi'];
+const filters: (ProjectType | 'All')[] = ['All', 'Lomba', 'Project', 'Organisasi'];
 
 function ProjectsContent() {
     const searchParams = useSearchParams();
@@ -115,35 +117,41 @@ function ProjectsContent() {
                             <Link key={project.slug} href={`/projects/${project.slug}`} className="group block">
                                 <Card className="h-full overflow-hidden transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:-translate-y-1 bg-card/40 border-primary/5">
                                     <div className="aspect-video relative bg-muted overflow-hidden rounded-t-3xl m-2 mb-0">
-                                        <div className="absolute inset-0 flex items-center justify-center text-muted-foreground bg-secondary/30 group-hover:scale-105 transition-transform duration-500">
-                                            {/* Image Placeholder */}
-                                            [Image: {project.title}]
-                                        </div>
-                                        <div className="absolute top-3 right-3">
-                                            <Badge variant="secondary" className="bg-white/90 backdrop-blur shadow-sm text-xs font-bold px-3 py-1">
+                                        {/* Image with Branded Fallback */}
+                                        <ImageWithFallback
+                                            src={project.coverImage}
+                                            alt={project.title}
+                                            fill
+                                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        />
+                                        <div className="absolute top-3 right-3 z-10">
+                                            <Badge variant="secondary" className="bg-white/90 dark:bg-black/80 backdrop-blur shadow-sm text-[10px] font-bold px-2.5 py-0.5 text-slate-900 dark:text-slate-100">
                                                 {project.type}
                                             </Badge>
                                         </div>
                                     </div>
-                                    <CardContent className="p-5 space-y-4">
-                                        <div>
-                                            <h3 className="text-xl font-bold group-hover:text-primary transition-colors line-clamp-1 mb-1">
-                                                {project.title}
-                                            </h3>
-                                            <p className="text-xs text-muted-foreground font-medium">{project.year} • {project.role}</p>
-                                        </div>
+                                    <CardContent className="p-5 flex flex-col flex-1 space-y-4">
+                                        <div className="flex-1 space-y-3">
+                                            <div>
+                                                <h3 className="text-xl font-bold group-hover:text-primary transition-colors line-clamp-1 mb-1">
+                                                    {project.title}
+                                                </h3>
+                                                <p className="text-xs text-muted-foreground font-medium">{project.year} • {project.role}</p>
+                                            </div>
 
-                                        <div className="flex flex-wrap gap-1.5">
-                                            {project.tags.slice(0, 3).map(tag => (
-                                                <Badge key={tag} variant="outline" className="text-[10px] bg-secondary/10 border-primary/10 text-muted-foreground">{tag}</Badge>
-                                            ))}
+                                            <div className="flex flex-wrap gap-1.5">
+                                                {project.tags.slice(0, 3).map(tag => (
+                                                    <Badge key={tag} variant="outline" className="text-[10px] bg-secondary/10 border-primary/10 text-muted-foreground">{tag}</Badge>
+                                                ))}
+                                            </div>
+                                            <p className="text-sm text-muted-foreground line-clamp-2 leading-relaxed h-[2.5rem]">
+                                                {project.shortSummary}
+                                            </p>
                                         </div>
-                                        <p className="text-sm text-muted-foreground line-clamp-2 leading-relaxed">
-                                            {project.shortSummary}
-                                        </p>
-                                        <div className="pt-2">
-                                            <span className="text-xs font-bold text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 inline-flex items-center">
-                                                View Case Study →
+                                        <div className="pt-2 border-t border-primary/5">
+                                            <span className="text-xs font-bold text-primary inline-flex items-center group-hover:translate-x-1 transition-transform">
+                                                Lihat detail →
                                             </span>
                                         </div>
                                     </CardContent>

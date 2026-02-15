@@ -56,9 +56,8 @@ export default function AboutPage() {
                     <div className="lg:sticky lg:top-32 space-y-8 animate-blur-in">
                         {/* Profile Card */}
                         <div className="group relative">
-                            {/* Premium Glass Card - Solid Deep Blue (Forced) */}
-                            {/* Premium Glass Card - Solid Deep Blue (Forced Always) */}
-                            <div className="absolute inset-0 bg-[#030712] backdrop-blur-none rounded-[2.5rem] border-2 border-pink-500/30 shadow-2xl shadow-purple-500/10 -z-10 transition-all duration-500" />
+                            {/* Premium Card - Model Inspired (Pink & White) */}
+                            <div className="absolute inset-0 bg-white/95 dark:bg-[#030712]/95 backdrop-blur-md rounded-[2.5rem] border-2 border-pink-500/40 dark:border-pink-500/30 shadow-2xl shadow-pink-500/10 -z-10 transition-all duration-500" />
 
                             {/* Vibrant Pink Glow on Hover */}
                             <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-tr from-transparent via-transparent to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
@@ -67,8 +66,8 @@ export default function AboutPage() {
                                 {/* Avatar Monogram - Clean & Sharp */}
                                 <div className="relative mx-auto w-32 h-32 group-hover:scale-105 transition-transform duration-500 ease-out">
                                     <div className="absolute inset-0 bg-gradient-to-b from-black/5 to-transparent dark:from-pink-500/20 rounded-full blur-2xl transform scale-90 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                                    <div className="relative w-full h-full rounded-full bg-linear-to-b from-neutral-100 to-white dark:bg-gradient-to-br dark:from-pink-900/20 dark:to-purple-900/20 border-[6px] border-white dark:border-pink-500/30 flex items-center justify-center overflow-hidden shadow-xl shadow-black/5 dark:shadow-pink-500/10">
-                                        <span className="font-heading font-black text-4xl text-neutral-800 dark:text-pink-200 tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-foreground to-foreground/80 dark:from-pink-200 dark:to-purple-200">
+                                    <div className="relative w-full h-full rounded-full bg-white dark:bg-pink-950/20 border-[6px] border-pink-50 dark:border-pink-500/20 flex items-center justify-center overflow-hidden shadow-lg">
+                                        <span className="font-heading font-black text-4xl tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-pink-500 to-purple-600 dark:from-pink-300 dark:to-purple-300">
                                             SZ
                                         </span>
                                     </div>
@@ -92,21 +91,21 @@ export default function AboutPage() {
 
                                 {/* Clean Stats Row */}
                                 <div className="flex justify-center gap-4 py-2">
-                                    <div className="px-5 py-3 rounded-2xl bg-white dark:bg-pink-950/30 border-2 border-transparent hover:border-pink-500/30 transition-all group/stat shadow-sm">
+                                    <div className="px-5 py-3 rounded-2xl bg-pink-50 dark:bg-pink-950/30 border-2 border-pink-100 dark:border-transparent hover:border-pink-500/30 transition-all group/stat shadow-sm">
                                         <Palette className="w-5 h-5 text-pink-500 mx-auto mb-1 group-hover/stat:scale-110 transition-transform" />
-                                        <span className="text-xs font-bold text-slate-500 dark:text-pink-200/70 group-hover/stat:text-pink-100">Design</span>
+                                        <span className="text-xs font-bold text-pink-600/70 dark:text-pink-200/70 group-hover/stat:text-pink-700 dark:group-hover/stat:text-pink-100">Design</span>
                                     </div>
-                                    <div className="px-5 py-3 rounded-2xl bg-white dark:bg-purple-950/30 border-2 border-transparent hover:border-purple-500/30 transition-all group/stat shadow-sm">
+                                    <div className="px-5 py-3 rounded-2xl bg-purple-50 dark:bg-purple-950/30 border-2 border-purple-100 dark:border-transparent hover:border-purple-500/30 transition-all group/stat shadow-sm">
                                         <Terminal className="w-5 h-5 text-purple-500 mx-auto mb-1 group-hover/stat:scale-110 transition-transform" />
-                                        <span className="text-xs font-bold text-slate-500 dark:text-purple-200/70 group-hover/stat:text-purple-100">Code</span>
+                                        <span className="text-xs font-bold text-purple-600/70 dark:text-purple-200/70 group-hover/stat:text-purple-700 dark:group-hover/stat:text-purple-100">Code</span>
                                     </div>
                                 </div>
 
                                 {/* Refined Actions */}
                                 <div className="space-y-3 pt-2">
                                     <Link href="/contact" className="block">
-                                        <Button size="lg" className="w-full rounded-2xl h-14 font-bold text-base shadow-xl shadow-primary/20 hover:shadow-primary/30 hover:-translate-y-0.5 transition-all bg-foreground text-background hover:bg-foreground/90">
-                                            Hire Me Now <ArrowUpRight className="ml-2 w-4 h-4 opacity-50" />
+                                        <Button size="lg" className="w-full rounded-2xl h-14 font-bold text-base shadow-xl shadow-primary/20 hover:shadow-primary/30 hover:-translate-y-0.5 transition-all bg-primary dark:bg-foreground text-white dark:text-background hover:bg-primary/90 dark:hover:bg-foreground/90">
+                                            Contact Me Now <ArrowUpRight className="ml-2 w-4 h-4 opacity-70" />
                                         </Button>
                                     </Link>
                                     <Link href="/projects" className="block">

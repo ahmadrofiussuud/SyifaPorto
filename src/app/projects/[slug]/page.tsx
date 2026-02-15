@@ -1,11 +1,13 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
 import { Section } from '@/components/ui/section';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { projects } from '@/data/content';
 import { Metadata } from 'next';
+import { ImageWithFallback } from '@/components/ui/image-with-fallback';
 
 type Props = {
     params: { slug: string };
@@ -86,11 +88,34 @@ export default function ProjectDetailPage({ params }: Props) {
                     {/* Main Content */}
                     <div className="lg:col-span-8 space-y-16">
 
-                        {/* Cover Image Placeholder */}
-                        <div className="aspect-video w-full rounded-3xl bg-muted border border-border/50 flex items-center justify-center text-muted-foreground shadow-sm overflow-hidden group">
-                            <div className="absolute inset-0 bg-secondary/20 group-hover:bg-secondary/10 transition-colors" />
-                            <span className="relative z-10 font-medium">[Cover Image: {project.title}]</span>
+                        {/* Cover Image with Branded Fallback */}
+                        <div className="aspect-video w-full rounded-3xl bg-muted border border-border/50 flex items-center justify-center text-muted-foreground shadow-sm overflow-hidden group relative">
+                            <ImageWithFallback
+                                src={project.coverImage}
+                                alt={project.title}
+                                fill
+                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                sizes="(max-width: 1200px) 100vw, 800px"
+                                priority
+                            />
                         </div>
+
+                        {/* Gallery Images (Optional) */}
+                        {project.gallery && project.gallery.length > 0 && (
+                            <div className="grid grid-cols-2 gap-4 mt-8">
+                                {project.gallery.map((img, idx) => (
+                                    <div key={idx} className="aspect-video relative rounded-2xl overflow-hidden bg-muted border border-border/40 group">
+                                        <ImageWithFallback
+                                            src={img}
+                                            alt={`${project.title} screen ${idx + 1}`}
+                                            fill
+                                            className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                            sizes="(max-width: 768px) 50vw, 400px"
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        )}
 
                         <div className="space-y-6">
                             <h2 className="text-3xl font-bold font-heading">The Problem</h2>

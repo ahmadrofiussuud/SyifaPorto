@@ -67,7 +67,7 @@ export default function CompetitionsPage() {
                                             "shadow-sm backdrop-blur-md",
                                             comp.outcome.toLowerCase().includes('juara') || comp.outcome.toLowerCase().includes('winner') || comp.outcome.toLowerCase().includes('best') || comp.outcome.toLowerCase().includes('medal')
                                                 ? "bg-yellow-100 text-yellow-700 hover:bg-yellow-200 border-yellow-200"
-                                                : "bg-white/90 text-primary hover:bg-white"
+                                                : "bg-white/90 text-slate-900 dark:text-slate-100 hover:bg-white"
                                         )}>
                                             <Trophy className="w-3 h-3 mr-1" /> {comp.outcome}
                                         </Badge>
