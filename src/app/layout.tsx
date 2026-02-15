@@ -58,8 +58,11 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          {process.env.NODE_ENV === "development" && <OverflowDetector />}
         </ThemeProvider>
       </body>
     </html>
   );
 }
+
+import { OverflowDetector } from "@/components/debug/OverflowDetector";

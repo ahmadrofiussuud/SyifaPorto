@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { personalInfo } from '@/data/content';
 import { Github, Linkedin, Dribbble, Instagram, Mail, ArrowUpRight, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Container } from '@/components/ui/container';
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
@@ -28,7 +29,7 @@ export function Footer() {
             <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10" />
             <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl -z-10" />
 
-            <div className="container px-6 md:px-12 py-16 mx-auto">
+            <Container className="py-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-8 mb-16">
                     {/* Column 1: Brand & Bio */}
                     <div className="space-y-6">
@@ -118,7 +119,7 @@ export function Footer() {
                         <span>using Next.js & Tailwind</span>
                     </div>
                 </div>
-            </div>
-        </footer>
+            </Container>
+        </footer >
     );
 }

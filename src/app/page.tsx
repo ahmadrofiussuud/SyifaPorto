@@ -34,6 +34,10 @@ const competitionAccents = [
   'text-emerald-600 bg-emerald-50',
 ];
 
+import { Container } from '@/components/ui/container';
+
+// ... (imports remain)
+
 export default function Home() {
   const featuredProjects = projects.slice(0, 2);
   const featuredCompetitions = competitions.slice(0, 2);
@@ -42,21 +46,21 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen relative">
       {/* ==================== HERO SECTION ==================== */}
-      <section className="relative min-h-[55vh] flex flex-col pt-12 lg:pt-20 pb-6">
+      <section className="relative min-h-[55vh] flex flex-col pt-8 lg:pt-20 pb-6 overflow-hidden">
         <HeroBackground />
 
-        <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10 flex-1 flex flex-col justify-start">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+        <Container className="relative z-10 flex-1 flex flex-col justify-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 lg:gap-8 items-center pt-8 lg:pt-0">
 
             {/* Left Content: Typography & CTAs */}
-            <div className="lg:col-span-7 space-y-6 animate-blur-in">
-              <div className="space-y-4 text-center lg:text-left">
+            <div className="lg:col-span-7 space-y-3 lg:space-y-6 animate-blur-in">
+              <div className="space-y-2 lg:space-y-4 text-center lg:text-left">
                 <span className="inline-flex items-center text-primary font-bold tracking-widest uppercase text-[10px] sm:text-xs">
                   <span className="w-6 h-[2px] bg-primary mr-3 hidden lg:block" />
                   Halo, Saya Syifa Zahra
                 </span>
 
-                <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black font-heading tracking-tight leading-none text-foreground transition-all">
+                <h1 className="font-black font-heading tracking-tight leading-none text-foreground transition-all" style={{ fontSize: 'clamp(40px, 8vw, 6rem)' }}>
                   UI/UX <br />
                   <span className="bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">Designer</span>
                 </h1>
@@ -67,14 +71,14 @@ export default function Home() {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-5">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-5">
                 <Link href="/about">
-                  <Button size="lg" className="h-11 sm:h-13 px-6 sm:px-9 rounded-xl bg-primary hover:bg-primary/90 text-white font-bold text-sm sm:text-base shadow-lg shadow-primary/20 transition-all hover:-translate-y-1 active:scale-95">
+                  <Button size="lg" className="h-10 sm:h-13 px-5 sm:px-9 rounded-xl bg-primary hover:bg-primary/90 text-white font-bold text-xs sm:text-base shadow-lg shadow-primary/20 transition-all hover:-translate-y-1 active:scale-95">
                     ABOUT ME
                   </Button>
                 </Link>
                 <Link href="/contact">
-                  <Button size="lg" variant="outline" className="h-11 sm:h-13 px-6 sm:px-9 rounded-xl border-2 border-primary/20 hover:bg-primary/5 hover:border-primary/40 font-bold text-sm sm:text-base text-foreground transition-all active:scale-95">
+                  <Button size="lg" variant="outline" className="h-10 sm:h-13 px-5 sm:px-9 rounded-xl border-2 border-primary/20 hover:bg-primary/5 hover:border-primary/40 font-bold text-xs sm:text-base text-foreground transition-all active:scale-95">
                     CONTACT ME
                   </Button>
                 </Link>
@@ -82,7 +86,7 @@ export default function Home() {
             </div>
 
             {/* Right Content: Photo (Natural & No Frame) */}
-            <div className="lg:col-span-5 relative flex justify-center lg:justify-end animate-pop-in duration-1000 delay-300 -mt-10 lg:mt-0">
+            <div className="lg:col-span-5 relative flex justify-center lg:justify-end animate-pop-in duration-1000 delay-300 -mt-4 lg:mt-0">
               <div className="relative w-full max-w-[400px] aspect-[4/5] sm:aspect-[3/4]">
                 {/* No frame, just the image sat naturally */}
                 <Image
@@ -98,7 +102,7 @@ export default function Home() {
           </div>
 
           {/* ==================== STATS BAR (Sleek & Interactive) ==================== */}
-          <div className="mt-1 lg:mt-2 w-full relative z-20">
+          <div className="mt-8 lg:mt-12 w-full relative z-20">
             <div className="bg-white/5 dark:bg-black/20 backdrop-blur-xl rounded-[2rem] border border-white/10 shadow-2xl overflow-hidden">
               <div className="grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
                 {[
@@ -125,7 +129,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 lg:hidden opacity-30">

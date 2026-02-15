@@ -10,13 +10,13 @@ const config: Config = {
     theme: {
         container: {
             center: true,
-            padding: "2rem",
+            padding: {
+                DEFAULT: "1rem", // Mobile: 16px
+                sm: "1.5rem",    // Tablet: 24px
+                lg: "2rem",      // Desktop: 32px
+            },
             screens: {
-                "sm": "640px",
-                "md": "768px",
-                "lg": "1024px",
-                "xl": "1200px",
-                "2xl": "1280px",
+                "2xl": "1280px", // Max-width cap
             },
         },
         extend: {

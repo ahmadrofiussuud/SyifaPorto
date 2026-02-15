@@ -1,5 +1,6 @@
 import { HTMLAttributes, forwardRef } from 'react';
 import { cn } from '@/lib/utils';
+import { Container } from '@/components/ui/container';
 
 interface SectionProps extends HTMLAttributes<HTMLElement> {
     container?: boolean;
@@ -10,13 +11,13 @@ const Section = forwardRef<HTMLElement, SectionProps>(
         return (
             <section
                 ref={ref}
-                className={cn('py-8 md:py-12', className)}
+                className={cn('py-12 md:py-16', className)}
                 {...props}
             >
                 {container ? (
-                    <div className="container mx-auto">
+                    <Container>
                         {children}
-                    </div>
+                    </Container>
                 ) : (
                     children
                 )}

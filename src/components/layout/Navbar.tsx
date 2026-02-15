@@ -18,6 +18,8 @@ const navItems = [
     { name: 'Contact', href: '/contact' },
 ];
 
+import { Container } from '@/components/ui/container';
+
 export function Navbar() {
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +27,7 @@ export function Navbar() {
 
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl shadow-sm transition-all duration-300">
-            <div className="container h-16 mx-auto grid grid-cols-2 lg:grid-cols-3 items-center">
+            <Container className="h-16 grid grid-cols-2 lg:grid-cols-3 items-center">
                 <div className="flex items-center justify-start">
                     <Link href="/" className="flex items-center space-x-2">
                         <span className="font-bold text-lg hidden sm:inline-block">
@@ -81,11 +83,11 @@ export function Navbar() {
                         {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
                     </button>
                 </div>
-            </div>
+            </Container>
 
             {isOpen && (
                 <div className="lg:hidden border-b border-border/40 bg-background">
-                    <div className="container px-4 py-4 space-y-4">
+                    <Container className="py-4 space-y-4">
                         <nav className="flex flex-col space-y-3">
                             {navItems.map((item) => (
                                 <Link
@@ -106,9 +108,9 @@ export function Navbar() {
                                 <Button size="sm" className="w-full">Contact Me</Button>
                             </Link>
                         </div>
-                    </div>
+                    </Container>
                 </div>
             )}
-        </header>
+        </header >
     );
 }

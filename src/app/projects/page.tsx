@@ -74,7 +74,7 @@ function ProjectsContent() {
                 </div>
 
                 {/* Filters & Search */}
-                <div className="flex flex-col md:flex-row items-center justify-between gap-4 py-3 sticky top-16 bg-background/80 backdrop-blur-md z-40 px-4 -mx-4 rounded-b-2xl md:static md:bg-transparent md:p-0 animate-blur-in delay-200">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-4 py-3 sticky top-16 bg-background/80 backdrop-blur-md z-40 rounded-b-2xl md:static md:bg-transparent md:p-0 animate-blur-in delay-200">
                     {/* Type Filters */}
                     <div className="flex flex-wrap justify-center gap-2 order-2 md:order-1">
                         {filters.map((filter) => (
